@@ -1,4 +1,4 @@
-package com.dialogmaster.android.common.inject.module
+package com.gdgistanbul.projectx.android.common.inject.module
 
 import com.gdgistanbul.projectx.android.data.NetworkModule
 import dagger.Module

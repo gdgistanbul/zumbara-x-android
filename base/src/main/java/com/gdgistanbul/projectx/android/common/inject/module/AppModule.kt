@@ -1,3 +1,5 @@
+package com.gdgistanbul.projectx.android.common.inject.module
+
 import android.content.Context
 import com.gdgistanbul.projectx.android.ProjectXApplication
 import dagger.Module
