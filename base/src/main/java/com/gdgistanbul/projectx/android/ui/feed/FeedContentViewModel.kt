@@ -1,6 +1,8 @@
 package com.gdgistanbul.projectx.android.ui.feed
 
 import android.arch.lifecycle.ViewModel
+import com.gdgistanbul.projectx.android.data.Resource
+import com.gdgistanbul.projectx.android.data.Status
 import com.gdgistanbul.projectx.android.data.feed.model.response.FeedItemResponse
 import com.gdgistanbul.projectx.android.data.feed.repository.FeedContentRepository
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -10,16 +12,21 @@ class FeedContentViewModel @Inject
 constructor(private val repository: FeedContentRepository) : ViewModel() {
 
     fun fetchFeedContent() {
+
         repository
                 .fetchFeedContent()
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe { t: FeedItemResponse? -> createFeedItemViewState(t) }
+                .subscribe(this::createFeedItemViewState)
     }
 
-    private fun createFeedItemViewState(feedItemResponse: FeedItemResponse?) {
+    private fun createFeedItemViewState(feedItemResource: Resource<FeedItemResponse>?) {
 
-        feedItemResponse?.let {
-            it.feedItems
+        feedItemResource?.let {
+            if (it.status == Status.SUCCESS) {
+                // success state.
+            }
+            // loading and error state.
         }
+
     }
 }
