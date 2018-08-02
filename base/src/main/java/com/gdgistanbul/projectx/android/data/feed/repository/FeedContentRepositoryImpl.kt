@@ -5,7 +5,7 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class FeedContentRepositoryImpl @Inject constructor(val remoteDataSource: FeedContentRemoteDataSource) : FeedContentRepository {
+class FeedContentRepositoryImpl @Inject constructor(private val remoteDataSource: FeedContentRemoteDataSource) : FeedContentRepository {
 
     override fun fetchFeedContent() {
         remoteDataSource.fetchFeedContent()
