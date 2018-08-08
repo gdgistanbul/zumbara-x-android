@@ -14,11 +14,15 @@ constructor(private val remoteDataSource: FeedContentRemoteDataSource) : FeedCon
 
     override fun fetchFeedContent(): Observable<Resource<FeedItemResponse>> {
 
-        return remoteDataSource
-                .fetchFeedContent()
-                .map { t -> Resource.success(t) }
-                .toObservable()
+        return Observable.just(Resource.loading<FeedItemResponse>())
+                .concatWith(remoteDataSource
+                        .fetchFeedContent()
+                        .toObservable()
+                        .map {
+                            Resource.success(it)
+                        })
                 .subscribeOn(Schedulers.io())
+
     }
 
 }

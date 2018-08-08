@@ -1,6 +1,7 @@
 package com.gdgistanbul.projectx.android.ui.feed
 
 import android.arch.lifecycle.ViewModel
+import android.util.Log
 import com.gdgistanbul.projectx.android.data.Resource
 import com.gdgistanbul.projectx.android.data.Status
 import com.gdgistanbul.projectx.android.data.feed.model.response.FeedItemResponse
@@ -12,6 +13,7 @@ class FeedContentViewModel @Inject
 constructor(private val repository: FeedContentRepository) : ViewModel() {
 
     fun fetchFeedContent() {
+
 
         repository
                 .fetchFeedContent()
@@ -25,7 +27,16 @@ constructor(private val repository: FeedContentRepository) : ViewModel() {
             if (it.status == Status.SUCCESS) {
                 // success state.
             }
-            // loading and error state.
+
+            if (it.status == Status.LOADING) {
+                // loading state.
+
+            }
+
+            if (it.status == Status.ERROR) {
+                // error state.
+
+            }
         }
 
     }

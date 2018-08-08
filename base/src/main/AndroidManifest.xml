@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.gdgistanbul.projectx.android.base">
 
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+
     <application
         android:name="com.gdgistanbul.projectx.android.ProjectXApplication"
         android:allowBackup="true"
@@ -23,9 +27,9 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:scheme="http"
                     android:host="com.android.elif.projectx"
-                    android:pathPattern="/main" />
+                    android:pathPattern="/main"
+                    android:scheme="http" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -34,11 +38,13 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:scheme="https"
                     android:host="com.android.elif.projectx"
-                    android:pathPattern="/main" />
+                    android:pathPattern="/main"
+                    android:scheme="https" />
             </intent-filter>
-            <meta-data android:name="default-url"
+
+            <meta-data
+                android:name="default-url"
                 android:value="https://tcom.android.elif.projectx/main" />
         </activity>
     </application>

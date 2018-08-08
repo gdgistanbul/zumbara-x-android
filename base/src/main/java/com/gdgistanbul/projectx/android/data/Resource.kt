@@ -15,12 +15,10 @@ class Resource<T> private constructor(val status: Status, val data: T?) {
             return Resource(Status.SUCCESS, data)
         }
 
-        fun <T> error(msg: String, @Nullable data: T): Resource<T> {
-            return Resource(Status.ERROR, data)
+        fun <T> error(msg: String): Resource<T> {
+            return Resource(Status.ERROR, null)
         }
 
-        fun <T> loading(): Resource<T> {
-            return Resource(Status.LOADING, null)
-        }
+        fun <T> loading(): Resource<T> = Resource(Status.LOADING, null)
     }
 }
