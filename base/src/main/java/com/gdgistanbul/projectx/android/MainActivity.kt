@@ -1,5 +1,6 @@
 package com.gdgistanbul.projectx.android
 
+import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import com.gdgistanbul.projectx.android.base.R
@@ -18,6 +19,11 @@ class MainActivity : BaseActivity() {
 
 
         feedContentViewModel.fetchFeedContent()
+
+
+        feedContentViewModel.feedContentLive.observe(this, Observer {
+            // viewstate.
+        })
 
     }
 }

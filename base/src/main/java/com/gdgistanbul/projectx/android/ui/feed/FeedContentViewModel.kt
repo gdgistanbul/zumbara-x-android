@@ -1,5 +1,7 @@
 package com.gdgistanbul.projectx.android.ui.feed
 
+import android.arch.lifecycle.LiveData
+import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
 import android.util.Log
 import com.gdgistanbul.projectx.android.data.Resource
@@ -12,8 +14,9 @@ import javax.inject.Inject
 class FeedContentViewModel @Inject
 constructor(private val repository: FeedContentRepository) : ViewModel() {
 
-    fun fetchFeedContent() {
+    var feedContentLive: MutableLiveData<FeedContentViewState> = MutableLiveData()
 
+    fun fetchFeedContent() {
 
         repository
                 .fetchFeedContent()
@@ -26,6 +29,8 @@ constructor(private val repository: FeedContentRepository) : ViewModel() {
         feedItemResource?.let {
             if (it.status == Status.SUCCESS) {
                 // success state.
+
+                feedContentLive.value = FeedContentViewState()
             }
 
             if (it.status == Status.LOADING) {
