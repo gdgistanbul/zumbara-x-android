@@ -11,20 +11,21 @@
         <item name="colorPrimaryDetailText">@color/colorPrimaryDetailTextLightTheme</item>
     </style>
 
+    <style name="Widget.ProjectX" parent="@android:style/Widget" />
 
-    <style name="RatioStarStyle">
+    <style name="Widget.ProjectX.CardItem">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/margin_small</item>
+        <item name="android:layout_marginLeft">@dimen/margin_normal</item>
+        <item name="android:layout_marginRight">@dimen/margin_normal</item>
+    </style>
+
+    <style name="Widget.ProjectX.RatioStarStyle">
         <item name="android:layout_width">18dp</item>
         <item name="android:layout_height">18dp</item>
         <item name="android:src">@android:drawable/btn_star</item>
         <item name="android:scaleType">fitCenter</item>
-    </style>
-
-    <style name="CardItem">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginBottom">@dimen/md_default_padding_8</item>
-        <item name="android:layout_marginLeft">@dimen/md_default_padding_16</item>
-        <item name="android:layout_marginRight">@dimen/md_default_padding_16</item>
     </style>
 
 </resources>
