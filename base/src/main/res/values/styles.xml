@@ -1,11 +1,30 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppThemeLight" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimaryText">@color/colorPrimaryTextLightTheme</item>
+        <item name="colorSecondaryText">@color/colorSecondaryTextLightTheme</item>
+        <item name="colorPrimaryDetailText">@color/colorPrimaryDetailTextLightTheme</item>
+    </style>
+
+
+    <style name="RatioStarStyle">
+        <item name="android:layout_width">18dp</item>
+        <item name="android:layout_height">18dp</item>
+        <item name="android:src">@android:drawable/btn_star</item>
+        <item name="android:scaleType">fitCenter</item>
+    </style>
+
+    <style name="CardItem">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/md_default_padding_8</item>
+        <item name="android:layout_marginLeft">@dimen/md_default_padding_16</item>
+        <item name="android:layout_marginRight">@dimen/md_default_padding_16</item>
     </style>
 
 </resources>
