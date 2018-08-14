@@ -27,7 +27,7 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:host="com.android.elif.projectx"
+                    android:host="com.gdgistanbul.projectx.android"
                     android:pathPattern="/main"
                     android:scheme="http" />
             </intent-filter>
@@ -38,14 +38,14 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:host="com.android.elif.projectx"
+                    android:host="com.gdgistanbul.projectx.android"
                     android:pathPattern="/main"
                     android:scheme="https" />
             </intent-filter>
 
             <meta-data
                 android:name="default-url"
-                android:value="https://tcom.android.elif.projectx/main" />
+                android:value="https:/com.gdgistanbul.projectx.android/main" />
         </activity>
     </application>
 
