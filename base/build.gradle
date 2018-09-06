@@ -57,4 +57,7 @@ dependencies {
     kapt 'com.google.dagger:dagger-compiler:2.15'
     kapt 'com.google.dagger:dagger-android-processor:2.15'
 
+    //ui components
+    implementation 'com.android.support:cardview-v7:27.1.1'
+
 }
