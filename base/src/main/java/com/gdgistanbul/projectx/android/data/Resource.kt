@@ -15,8 +15,8 @@ class Resource<T> private constructor(val status: Status, val data: T?) {
             return Resource(Status.SUCCESS, data)
         }
 
-        fun <T> error(msg: String): Resource<T> {
-            return Resource(Status.ERROR, null)
+        fun <T> error(throwable: Throwable): Resource<Throwable> {
+            return Resource(Status.ERROR, throwable)
         }
 
         fun <T> loading(): Resource<T> = Resource(Status.LOADING, null)

@@ -6,6 +6,6 @@ import retrofit2.http.GET
 
 interface ProjectXRestInterface {
 
-    @GET("feed")
+    @GET("getFeeds")
     fun fetchFeedContent(): Single<FeedItemResponse>
 }

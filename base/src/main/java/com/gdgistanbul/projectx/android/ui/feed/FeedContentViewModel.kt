@@ -1,9 +1,7 @@
 package com.gdgistanbul.projectx.android.ui.feed
 
-import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
-import android.util.Log
 import com.gdgistanbul.projectx.android.data.Resource
 import com.gdgistanbul.projectx.android.data.Status
 import com.gdgistanbul.projectx.android.data.feed.model.response.FeedItemResponse
