@@ -1,4 +1,4 @@
-package com.dialogmaster.android.common.inject.scope
+package com.gdgistanbul.projectx.android.common.inject.scope
 
 import javax.inject.Scope
 

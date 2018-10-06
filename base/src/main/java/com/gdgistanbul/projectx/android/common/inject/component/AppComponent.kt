@@ -2,10 +2,7 @@ package com.gdgistanbul.projectx.android.common.inject.component
 
 import android.app.Application
 import com.gdgistanbul.projectx.android.ProjectXApplication
-import com.gdgistanbul.projectx.android.common.inject.module.ActivityBuilderModule
-import com.gdgistanbul.projectx.android.common.inject.module.AppModule
-import com.gdgistanbul.projectx.android.common.inject.module.DataModule
-import com.gdgistanbul.projectx.android.common.inject.module.ViewModelModule
+import com.gdgistanbul.projectx.android.common.inject.module.*
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjector
@@ -18,7 +15,8 @@ import javax.inject.Singleton
     AppModule::class,
     DataModule::class,
     ViewModelModule::class,
-    ActivityBuilderModule::class])
+    ActivityBuilderModule::class,
+    FragmentBuilderModule::class])
 interface AppComponent : AndroidInjector<ProjectXApplication> {
     @Component.Builder
     abstract class Builder : AndroidInjector.Builder<ProjectXApplication>() {
