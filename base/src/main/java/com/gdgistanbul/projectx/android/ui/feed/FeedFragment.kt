@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.gdgistanbul.projectx.android.BaseFragment
 import com.gdgistanbul.projectx.android.BaseNavigationFragment
 import dagger.android.support.DaggerFragment
 import javax.inject.Inject
@@ -15,18 +16,10 @@ import com.gdgistanbul.projectx.android.base.databinding.FragmentFeedBinding;
 import dagger.android.support.AndroidSupportInjection
 
 
-class FeedFragment : DaggerFragment(), BaseNavigationFragment {
+class FeedFragment : BaseFragment(), BaseNavigationFragment {
 
 
     private lateinit var feedContentViewModel: FeedContentViewModel
-
-    @Inject
-    internal lateinit var viewModelProviderFactory: ViewModelProvider.Factory
-
-    override fun onAttach(context: Context?) {
-        AndroidSupportInjection.inject(this)
-        super.onAttach(context)
-    }
 
     override fun onCreateView(
             inflater: LayoutInflater,
