@@ -12,12 +12,14 @@
 
     </data>
 
-    <fragment
-        android:id="@+id/filter_sheet"
-        android:name="com.gdgistanbul.projectx.android.ui.feed.FeedFragment"
+    <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="bottom"
-        android:layout_marginBottom="4dp" />
+        android:clipToPadding="false"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/spacing_micro"
+        android:paddingTop="@dimen/spacing_normal"
+        android:scrollbars="vertical"
+        tools:ignore="UnusedAttribute" />
 
 </layout>
