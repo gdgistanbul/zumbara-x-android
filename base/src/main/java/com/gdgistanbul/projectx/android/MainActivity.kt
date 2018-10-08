@@ -22,11 +22,10 @@ class MainActivity : BaseActivity() {
 
     }
 
-    private fun <F> replaceFragment(fragment: F) where F : Fragment, F : BaseNavigationFragment {
-        supportFragmentManager.inTransaction {
-            currentFragment = fragment
-            replace(R.id.fragment_container, fragment)
-        }
+    private fun <F> replaceFragment(fragment: F) where F : BaseFragment, F : BaseNavigationFragment {
+        replaceFragment(fragment, fragment.javaClass.name, R.id.fragment_container)
+        currentFragment = fragment
+
     }
 
     override fun onBackPressed() {
