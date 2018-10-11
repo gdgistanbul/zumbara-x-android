@@ -26,7 +26,7 @@ fun DaggerAppCompatActivity.replaceFragmentSafely(fragment: Fragment,
 }
 
 
-fun <T : Fragment> DaggerAppCompatActivity.addFragmentSafelfy(fragment: T,
+fun <T : Fragment> DaggerAppCompatActivity.addFragmentSafely(fragment: T,
                                                         tag: String,
                                                         allowStateLoss: Boolean = false,
                                                         @IdRes containerViewId: Int,
