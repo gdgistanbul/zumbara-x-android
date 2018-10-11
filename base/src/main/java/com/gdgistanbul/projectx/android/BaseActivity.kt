@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentTransaction
 import com.gdgistanbul.projectx.android.base.R
-import com.gdgistanbul.projectx.android.extentions.addFragmentSafelfy
+import com.gdgistanbul.projectx.android.extentions.addFragmentSafely
 import com.gdgistanbul.projectx.android.extentions.replaceFragmentSafely
 import dagger.android.AndroidInjection
 import dagger.android.support.DaggerAppCompatActivity
@@ -17,7 +17,7 @@ abstract class BaseActivity : DaggerAppCompatActivity() {
     internal lateinit var viewModelProviderFactory: ViewModelProvider.Factory
 
     inline fun addFragment(fragment: BaseFragment, tag: String, containerId: Int) {
-        addFragmentSafelfy(
+        addFragmentSafely(
                 fragment = fragment,
                 tag = tag,
                 containerViewId = containerId
