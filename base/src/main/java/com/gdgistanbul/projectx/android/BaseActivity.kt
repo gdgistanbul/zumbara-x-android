@@ -16,11 +16,6 @@ abstract class BaseActivity : DaggerAppCompatActivity() {
     @Inject
     internal lateinit var viewModelProviderFactory: ViewModelProvider.Factory
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        AndroidInjection.inject(this)
-        super.onCreate(savedInstanceState)
-    }
-
     inline fun addFragment(fragment: BaseFragment, tag: String, containerId: Int) {
         addFragmentSafelfy(
                 fragment = fragment,
