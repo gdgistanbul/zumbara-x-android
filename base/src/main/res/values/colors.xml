@@ -1,14 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    
+
+    <!-- Light Theme Text Colors-->
     <color name="colorPrimaryTextLightTheme">#3b4753</color>
     <color name="colorSecondaryTextLightTheme">#3b475380</color>
     <color name="colorPrimaryDetailTextLightTheme">#3b4753</color>
 
+    <!-- Dark Theme Text Colors-->
     <color name="colorPrimaryTextDarkTheme">#ffffff</color>
     <color name="colorSecondaryTextDarkTheme">#ffffff</color>
     <color name="colorPrimaryDetailTextDarkTheme">#ffffff</color>
+
+    <!-- the background color of scrollable content. -->
+    <color name="colorBackground">#F5F5F5</color>
+    <!--  color used to indicate error status. -->
+    <color name="colorError">#BB0000</color>
+    <!-- color used to indicate positive status. -->
+    <color name="colorPositive">#0CC25E</color>
+    <!-- color of surfaces such as cards, sheets, menus. -->
+    <color name="colorSurface">#ffffff</color>
+    <!-- the  color of disabled content. -->
+    <color name="colorDisabled">#dcdcdc</color>
+    <!-- the  color of divider. -->
+    <color name="colorDivider">#dddddd</color>
 </resources>
