@@ -22,13 +22,14 @@ constructor(private val repository: FeedContentRepository) : ViewModel() {
                 .subscribe(this::createFeedItemViewState)
     }
 
-    private fun createFeedItemViewState(feedItemResource: Resource<FeedItemResponse>?) {
+    private fun createFeedItemViewState(feedItemResource: Resource<FeedItemResponse>) {
 
-        feedItemResource?.let {
+        feedItemResource.let {
             if (it.status == Status.SUCCESS) {
                 // success state.
-
-                feedContentLive.value = FeedContentViewState()
+                feedItemResource.data?.let {
+                    feedContentLive.value = FeedContentViewState(feedItemResource.data.feedItems)
+                }
             }
 
             if (it.status == Status.LOADING) {

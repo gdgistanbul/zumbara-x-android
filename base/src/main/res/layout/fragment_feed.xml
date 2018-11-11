@@ -6,13 +6,12 @@
 
     <data>
 
-        <variable
-            name="viewModel"
-            type="com.gdgistanbul.projectx.android.ui.feed.FeedContentViewModel" />
 
     </data>
 
+
     <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerViewFeedContent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipToPadding="false"
@@ -21,5 +20,6 @@
         android:paddingTop="@dimen/spacing_normal"
         android:scrollbars="vertical"
         tools:ignore="UnusedAttribute" />
+
 
 </layout>
