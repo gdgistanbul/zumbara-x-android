@@ -32,4 +32,5 @@ abstract class BaseActivity : DaggerAppCompatActivity() {
                 allowStateLoss = true
         )
     }
+
 }

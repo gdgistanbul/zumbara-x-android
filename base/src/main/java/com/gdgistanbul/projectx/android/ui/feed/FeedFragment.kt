@@ -11,7 +11,6 @@ import com.gdgistanbul.projectx.android.BaseFragment
 import com.gdgistanbul.projectx.android.BaseNavigationFragment
 import com.gdgistanbul.projectx.android.base.databinding.FragmentFeedBinding
 
-
 class FeedFragment : BaseFragment(), BaseNavigationFragment {
 
     private lateinit var feedContentViewModel: FeedContentViewModel
@@ -33,14 +32,12 @@ class FeedFragment : BaseFragment(), BaseNavigationFragment {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         feedContentViewModel = ViewModelProviders.of(this, viewModelProviderFactory).get(FeedContentViewModel::class.java)
-
         feedContentViewModel.fetchFeedContent()
 
+
         feedContentViewModel.feedContentLive.observe(this, Observer {
-            // viewstate.
-            it?.let {
-                feedContentItemAdapter.addFeedItem(it.feedItems)
-            }
+            // todo fix nullable issue.
+            feedContentItemAdapter.addFeedItem(it?.feedItems!!)
         })
     }
 }
