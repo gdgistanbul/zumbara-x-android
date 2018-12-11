@@ -2,6 +2,7 @@ package com.gdgistanbul.projectx.android
 
 import android.app.Activity
 import android.app.Application
+import android.content.res.Configuration
 import com.gdgistanbul.projectx.android.common.inject.component.DaggerAppComponent
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
@@ -25,5 +26,9 @@ class ProjectXApplication : Application(), HasActivityInjector {
                 .app(this)
                 .create(this)
                 .inject(this)
+    }
+
+    override fun onConfigurationChanged(newConfig: Configuration?) {
+        super.onConfigurationChanged(newConfig)
     }
 }

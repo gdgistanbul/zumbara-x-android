@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+    </data>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerViewFeedContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/spacing_micro"
+        android:paddingTop="@dimen/spacing_normal"
+        android:scrollbars="vertical"
+        tools:ignore="UnusedAttribute" />
+
+
+</layout>
