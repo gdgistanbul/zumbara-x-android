@@ -25,7 +25,7 @@ class FeedFragment : BaseFragment(), BaseNavigationFragment {
 
         binding.recyclerViewFeedContent.setHasFixedSize(true)
         binding.recyclerViewFeedContent.adapter = feedContentItemAdapter
-        binding.recyclerViewFeedContent.layoutManager = LinearLayoutManager(activity)
+        binding.recyclerViewFeedContent.layoutManager = LinearLayoutManager(context)
         return binding.root
     }
 
@@ -34,10 +34,20 @@ class FeedFragment : BaseFragment(), BaseNavigationFragment {
         feedContentViewModel = ViewModelProviders.of(this, viewModelProviderFactory).get(FeedContentViewModel::class.java)
         feedContentViewModel.fetchFeedContent()
 
+        with(feedContentViewModel) {
 
-        feedContentViewModel.feedContentLive.observe(this, Observer {
-            // todo fix nullable issue.
-            feedContentItemAdapter.addFeedItem(it?.feedItems!!)
-        })
+            loadingStateLiveData.observe(this@FeedFragment, Observer {
+                binding.feedLoadingState = it
+                binding.executePendingBindings()
+            })
+
+            feedContentLive.observe(this@FeedFragment, Observer {
+                // todo fix nullable issue.
+                binding.feedSuccessState = it
+                feedContentItemAdapter.addFeedItem(it?.feedItems!!)
+                binding.executePendingBindings()
+            })
+        }
+
     }
 }

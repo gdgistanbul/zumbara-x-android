@@ -13,7 +13,7 @@ import javax.inject.Inject
 class FeedContentViewModel @Inject constructor(private val repository: FeedContentRepository) : ViewModel() {
 
     val feedContentLive: MutableLiveData<FeedContentViewState> = MutableLiveData()
-    val loadingViewState: MutableLiveData<LoadingViewState> = MutableLiveData()
+    val loadingStateLiveData: MutableLiveData<LoadingViewState> = MutableLiveData()
 
     fun fetchFeedContent() {
         repository
@@ -24,9 +24,13 @@ class FeedContentViewModel @Inject constructor(private val repository: FeedConte
 
     private fun createFeedItemViewState(feedItemResource: Resource<FeedItemResponse>) {
 
-        loadingViewState.value = LoadingViewState(feedItemResource.status)
 
         feedItemResource.let {
+
+            if (it.status == Status.LOADING) {
+                loadingStateLiveData.value = LoadingViewState(feedItemResource.status)
+            }
+
             if (it.status == Status.SUCCESS) {
                 // success state.
                 feedItemResource.data?.let {

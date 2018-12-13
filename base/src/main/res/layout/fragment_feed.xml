@@ -6,20 +6,35 @@
 
     <data>
 
+        <variable
+            name="feedLoadingState"
+            type="com.gdgistanbul.projectx.android.common.ui.LoadingViewState" />
+
+        <variable
+            name="feedSuccessState"
+            type="com.gdgistanbul.projectx.android.ui.feed.FeedContentViewState" />
 
     </data>
 
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerViewFeedContent"
+    <com.erkutaras.statelayout.StateLayout
+        android:id="@+id/stateLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:clipToPadding="false"
-        android:orientation="vertical"
-        android:paddingBottom="@dimen/spacing_micro"
-        android:paddingTop="@dimen/spacing_normal"
-        android:scrollbars="vertical"
-        tools:ignore="UnusedAttribute" />
+        app:showContent="@{feedSuccessState.getSuccessState()}"
+        app:showLoading="@{feedLoadingState.getLoadingState()}">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerViewFeedContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/spacing_micro"
+            android:paddingTop="@dimen/spacing_normal"
+            android:scrollbars="vertical"
+            tools:ignore="UnusedAttribute" />
+
+    </com.erkutaras.statelayout.StateLayout>
 
 
 </layout>
